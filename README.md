@@ -20,4 +20,8 @@ The custom CUDA implementation was tested against the native PyTorch functional 
 
 ## How to RunEnsure you have the CUDA Toolkit and PyTorch installed in your environment.
 
-Open the polynomial_activation.ipynb notebook.The load() function will automatically compile the .cu file on the first run and link it to your Python session.## Project SignificanceThis project serves as a technical proof-of-concept for Performance Engineers needing to optimize bottlenecked AI layers. It demonstrates the ability to write low-level GPU code and integrate it seamlessly into modern AI research workflows.
+Open the polynomial_activation.ipynb notebook.The load() function will automatically compile the .cu file on the first run and link it to your Python session.
+
+## Project Significance
+
+This project serves as a technical proof-of-concept for Performance Engineers needing to optimize bottlenecked AI layers. It demonstrates the ability to write low-level GPU code and integrate it seamlessly into modern AI research workflows.

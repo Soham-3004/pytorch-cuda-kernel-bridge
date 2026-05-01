@@ -6,13 +6,17 @@ This repository demonstrates a high-performance bridge between high-level PyTorc
 
 ### The CUDA Kernel (polynomial_cuda.cu)
 
-The core computation is handled by a templated CUDA kernel designed for maximum throughput:Vectorized Parallelization: Utilizes 1024 threads per block to process element-wise operations across large tensors.Type Agnostic: Uses AT_DISPATCH_FLOATING_TYPES to ensure compatibility with various floating-point precisions.Memory Efficiency: Employs __restrict__ pointers to signal the compiler for better memory optimization.
+The core computation is handled by a templated CUDA kernel designed for maximum throughput:
+
+Vectorized Parallelization: Utilizes 1024 threads per block to process element-wise operations across large tensors.
+
+Type Agnostic: Uses AT_DISPATCH_FLOATING_TYPES to ensure compatibility with various floating-point precisions.
+
+Memory Efficiency: Employs __restrict__ pointers to signal the compiler for better memory optimization.
 
 ### The Python Bridge (load)
 
 Rather than using a traditional setup.py build, this project utilizes torch.utils.cpp_extension.load():Flexibility: The Just-In-Time (JIT) approach handles CUDA and PyTorch version mismatches dynamically, preventing common compilation errors during development.
-
-Optimization: Custom compiler flags like -O3 are passed during runtime to ensure the extension is fully optimized for execution.
 
 ## Benchmarking & Results
 

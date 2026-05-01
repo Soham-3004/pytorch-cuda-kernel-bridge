@@ -24,7 +24,7 @@ The custom CUDA implementation was tested against the native PyTorch functional 
 
 ### Performance Comparison
 
-ImplementationAverage Execution Time (ms)SpeedupPyTorch Built-in0.1375 ms1.0xCustom CUDA Extension0.0374 ms~3.67x Faster
+Implementation Average Execution Time (ms) Speedup PyTorch Built-in 0.1375 ms 1.0x Custom CUDA Extension 0.0374 ms ~ 3.67x Faster
 
 ### Why is the Custom Kernel Faster?
 

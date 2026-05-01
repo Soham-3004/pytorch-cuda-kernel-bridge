@@ -2,7 +2,7 @@
 
 This repository demonstrates a high-performance bridge between high-level PyTorch and custom CUDA C++ kernels. It features a custom polynomial activation operator ($x^2 + x + 1$) implemented at the hardware level to showcase the efficiency gains of bypassing standard framework abstractions.
 
-## Implementation Strategy### 
+## Implementation Strategy
 
 ### The CUDA Kernel (polynomial_cuda.cu)
 

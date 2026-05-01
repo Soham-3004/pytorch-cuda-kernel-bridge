@@ -16,7 +16,15 @@ Optimization: Custom compiler flags like -O3 are passed during runtime to ensure
 
 ## Benchmarking & Results
 
-The custom CUDA implementation was tested against the native PyTorch functional implementation ($x^2 + x + 1$) on a tensor of 1,000,000 elements.### Performance ComparisonImplementationAverage Execution Time (ms)SpeedupPyTorch Built-in0.1375 ms1.0xCustom CUDA Extension0.0374 ms~3.67x Faster### Why is the Custom Kernel Faster?While PyTorch is highly optimized, a custom CUDA kernel allows for a Fused Operation. PyTorch might execute this polynomial as multiple discrete operations ($x \cdot x \rightarrow + x \rightarrow + 1$), involving multiple memory round-trips. The custom kernel performs the entire calculation in a single pass over the data, significantly reducing global memory bandwidth pressure.
+The custom CUDA implementation was tested against the native PyTorch functional implementation ($x^2 + x + 1$) on a tensor of 1,000,000 elements.
+
+### Performance Comparison
+
+ImplementationAverage Execution Time (ms)SpeedupPyTorch Built-in0.1375 ms1.0xCustom CUDA Extension0.0374 ms~3.67x Faster
+
+### Why is the Custom Kernel Faster?
+
+While PyTorch is highly optimized, a custom CUDA kernel allows for a Fused Operation. PyTorch might execute this polynomial as multiple discrete operations ($x \cdot x \rightarrow + x \rightarrow + 1$), involving multiple memory round-trips. The custom kernel performs the entire calculation in a single pass over the data, significantly reducing global memory bandwidth pressure.
 
 ## How to RunEnsure you have the CUDA Toolkit and PyTorch installed in your environment.
 
